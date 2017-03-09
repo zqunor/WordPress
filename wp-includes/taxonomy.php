@@ -2040,6 +2040,7 @@ function wp_insert_term( $term, $taxonomy, $args = array() ) {
 	$name_matches = get_terms( $taxonomy, array(
 		'name' => $name,
 		'hide_empty' => false,
+		'parent' => $args['parent'],
 	) );
 
 	/*
@@ -2063,7 +2064,7 @@ function wp_insert_term( $term, $taxonomy, $args = array() ) {
 				$siblings = get_terms( $taxonomy, array( 'get' => 'all', 'parent' => $parent ) );
 
 				$existing_term = null;
-				if ( $name_match->slug === $slug && in_array( $name, wp_list_pluck( $siblings, 'name' ) ) ) {
+				if ( ( ! $slug_provided || $name_match->slug === $slug ) && in_array( $name, wp_list_pluck( $siblings, 'name' ) ) ) {
 					$existing_term = $name_match;
 				} elseif ( $slug_match && in_array( $slug, wp_list_pluck( $siblings, 'slug' ) ) ) {
 					$existing_term = $slug_match;
@@ -3812,8 +3813,8 @@ function wp_get_split_term( $old_term_id, $taxonomy ) {
 /**
  * Determine whether a term is shared between multiple taxonomies.
  *
- * Shared taxonomy terms began to be split in 4.3, but failed cron tasks or other delays in upgrade routines may cause
- * shared terms to remain.
+ * Shared taxonomy terms began to be split in 4.3, but failed cron tasks or
+ * other delays in upgrade routines may cause shared terms to remain.
  *
  * @since 4.4.0
  *

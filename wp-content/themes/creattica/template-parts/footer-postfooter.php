@@ -11,8 +11,8 @@ if ( !empty( $site_info ) ) :
 					if ( trim( $site_info ) == '<!--default-->' ) {
 						printf(
 							/* Translators: 1 is Theme name/link, 2 is WordPress name/link, 3 is site name/link */
-							__( 'Designed using %2$s. Powered by zhouqun.', 'zhouqun' ),
-							hybridextend_get_wp_theme_link( 'http://www.zqblogs.cn/' ),
+							__( 'Designed using %1$s. Powered by %2$s.', 'creattica' ),
+							hybridextend_get_wp_theme_link( 'https://wordpress.org/themes/creattica/' ),
 							hybrid_get_wp_link(),
 							hybrid_get_site_link()
 						);

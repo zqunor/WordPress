@@ -150,7 +150,7 @@ function hoot_logo() {
 		$display .= hoot_get_logo_image();
 	}
 
-	echo apply_filters( 'hoot_display_logo', $display );
+	echo apply_filters( 'hoot_display_logo', $display, $hoot_logo );
 }
 endif;
 

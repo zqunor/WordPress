@@ -28,6 +28,9 @@ $content_blocks_query = new WP_Query( array( 'post_type' => 'page', 'post__in' =
 
 // Temporarily remove read more links from excerpts
 hoot_remove_readmore_link();
+
+// Template modification Hook
+do_action( 'hoot_content_blocks_wrap' );
 ?>
 
 <div class="content-blocks-widget-wrap <?php echo sanitize_html_class( $top_class ); ?>">
@@ -37,7 +40,7 @@ hoot_remove_readmore_link();
 			<?php
 			/* Display Title */
 			if ( $title )
-				echo $before_title . $title . $after_title;
+				echo wp_kses_post( apply_filters( 'hoot_content_blocks_title', $before_title . $title . $after_title ) );
 			?>
 
 			<div class="flush-columns">
@@ -159,6 +162,11 @@ hoot_remove_readmore_link();
 				if ( !$clearfix ) echo '</div>';
 				?>
 			</div>
+
+			<?php
+			// Template modification Hook
+			do_action( 'hoot_content_blocks_end' );
+			?>
 
 		</div>
 	</div>

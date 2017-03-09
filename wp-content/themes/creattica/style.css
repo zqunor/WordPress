@@ -3,7 +3,7 @@ Theme Name: Creattica
 Author: wpHoot
 Author URI: http://wphoot.com/
 Theme URI: http://wphoot.com/themes/creattica/
-Version: 1.0.11
+Version: 1.0.12
 Description: Featuring a left sidebar with left menu, Creattica offers a mobile responsive and flexible layout which can be used for lifestyle, fashion, health, fitness, culture, travel, artist or personal websites. With powerful custom widgets, the theme provides you more flexibility and ease-of-use for your site. Compatible with Jetpack, WooCommerce, Contact Form 7, Google Maps Press, Page Builder and all major plugins. Theme support is available at http://wphoot.com/support/ You can also check out the theme instructions at http://wphoot.com/support/ and demo at http://demo.wphoot.com/creattica/ for a closer look.
 License: GNU General Public License 3.0
 License URI: license.txt
@@ -3771,6 +3771,7 @@ ul.lightSlider,
 .woocommerce.archive ul.products,
 .woocommerce-page.archive ul.products {
   margin: 1.07142857em 0 0 0;
+  padding-top: 0;
 }
 .woocommerce.archive ul.products li.product,
 .woocommerce-page.archive ul.products li.product {

@@ -106,6 +106,12 @@ This theme contains background pattern files by wphoot.
 Change Log
 ---------------
 
+#### 1.0.12
+* # Hybrid Framework 3.0.0 #
+* Add actions to content box widgets
+* Woocommerce shop page css fix for first product
+* Display Logo action gets logo variable argument
+
 #### 1.0.11
 * # Hybrid Framework 3.0.0 #
 * Fix minified stylesheet for '>'
